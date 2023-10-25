@@ -1,3 +1,6 @@
+# Author: Jack McKee
+# Partner: Sami Al- Jamal
+
 def encode(password):
 
     encoded_password = ""
