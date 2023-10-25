@@ -1,8 +1,8 @@
 # Author: Jack McKee
 # Partner: Sami Al- Jamal
 
-def encode(password):
 
+def encode(password):
     encoded_password = ""
     for i in password:
         if int(i) in range(0, 7):
@@ -18,9 +18,16 @@ def encode(password):
 
 
 # Define and write decode function here
+def decoder(password):
+    new_pass = ""
+    for char in password:
+        new_pass += str((10 + int(char) - 3) % 10)
+    return new_pass
+
 
 if __name__ == "__main__":
     loop = True
+
     while loop is True:
         print("Menu")
         print("-" * 13)
@@ -32,8 +39,11 @@ if __name__ == "__main__":
             encoded_password = encode(password)
             print("Your password has been encoded and stored!\n")
 
-        # elif user_input == 2:
+        elif user_input == 2:
             # Call decode function here
+            decoded_password = decoder(encoded_password)
+            print(f"The encoded password is {encoded_password},", end=" ")
+            print(f"the original password is {decoded_password}.")
 
         elif user_input == 3:
             loop = False
